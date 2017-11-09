@@ -9,7 +9,7 @@ from litex.gen.fhdl.structure import _Fragment
 
 from litex.build.generic_platform import *
 from litex.build import tools
-
+from litex.build.lattice import common
 
 def _format_constraint(c):
     pass
@@ -123,6 +123,8 @@ class LatticeIceStormToolchain:
         # ice40 does not have a shift register primitive.
         "no_shreg_extract": None
     }
+
+    special_overrides = common.icestorm_special_overrides
 
     def __init__(self):
         self.yosys_opt = "-q"
